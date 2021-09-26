@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import GitResults from './components/GitResults';
 import './App.css';
 
 /**
@@ -15,6 +16,7 @@ export default class App extends Component {
   state = {
     searchQuery: '',
     searchType: 'users',
+    returnData: []
   }
 
   handleInput = (e: any) => {
@@ -35,7 +37,11 @@ export default class App extends Component {
     const response = await fetch(`https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=2`);
     const data = await response.json();
 
-    console.log(data);
+    this.setState({
+      returnData: data
+    });
+
+    console.log(this.state.returnData);
   }
 
   render() {
@@ -58,6 +64,9 @@ export default class App extends Component {
             <option value="repositories">Repositories</option>
           </select>
         </form>
+
+        <GitResults
+          returnData={this.state.returnData}/>
       </>
     )
   }
