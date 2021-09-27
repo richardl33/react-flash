@@ -1,7 +1,7 @@
 const GitReposItem = (props: any) => {
    return (
       <li>
-         <a href={props.link}>
+         <a href={props.link} target="_blank">
             <h1>{props.repo}</h1>
             <img src={props.profile} />
             <p className="author">by {props.author}</p>

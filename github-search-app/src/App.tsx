@@ -24,10 +24,6 @@ export default class App extends Component {
   componentDidUpdate = () => {
 
   }
-
-  getInputlength = () => {
-    return this.state.searchInputlength
-  }
   
   handleInput = (e: any) => {
     this.setState({
@@ -35,7 +31,7 @@ export default class App extends Component {
       searchInputlength: e.target.value.length
     })
 
-    // this.gitData();
+    // this.gitData(); 
   }
 
   handleSelect = (e: any) => {
@@ -63,6 +59,7 @@ export default class App extends Component {
           e.preventDefault();
           this.gitData(); // Remove (for testing only - GitHub API limit)
           }}>
+            
           <input
             className="git-search__input"
             type="text"
