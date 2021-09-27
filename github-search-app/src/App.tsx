@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import GitResults from './components/GitResults';
-import './App.css';
+import './App.scss';
 
 /**
  *
@@ -54,8 +54,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <>
-        <form onSubmit={e => {
+      <div className="container">
+
+        <form className="git-search__container" onSubmit={e => {
           e.preventDefault();
           this.gitData(); // Remove (for testing only - GitHub API limit)
           }}>
@@ -77,7 +78,7 @@ export default class App extends Component {
         <GitResults
           returnData={this.state.returnData}
           searchType={this.state.searchType}/>
-      </>
+      </div>
     )
   }
 }

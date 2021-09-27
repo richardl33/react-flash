@@ -1,0 +1,29 @@
+$bp-mobile: 320px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-desktop-max: 1200px;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(192, 255, 239);
+  border: 2px solid rgb(43, 113, 179); // Remove for prod
+}
+ 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.container {
+  max-width: $bp-desktop-max;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
