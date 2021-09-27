@@ -8,7 +8,7 @@ $bp-desktop-max: 1200px;
   padding: 0;
   margin: 0;
   background-color: rgb(192, 255, 239);
-  border: 2px solid rgb(43, 113, 179); // Remove for prod
+  border: 1px solid rgb(43, 113, 179); // Remove for prod
 }
  
 body {
@@ -20,10 +20,16 @@ a {
   text-decoration: none;
 }
 
+ul, li {
+   list-style: none;
+   width: 100%;
+}
+
 .container {
   max-width: $bp-desktop-max;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }

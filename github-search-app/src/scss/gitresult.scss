@@ -1,0 +1,29 @@
+.git-result {
+   &__tile {
+      background-color: pink;
+      
+   }
+   &__link {
+      display: flex;
+   }
+   &__profile {
+      width: 250px;
+      height: 250px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: white;
+   }
+   &__details {
+      width: 100%;
+   }
+   &__title {
+
+   }
+   &__author {
+      
+   }
+   &__stars {
+
+   }
+}

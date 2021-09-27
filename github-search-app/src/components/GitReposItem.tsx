@@ -1,11 +1,15 @@
 const GitReposItem = (props: any) => {
    return (
-      <li>
-         <a href={props.link} target="_blank">
-            <h1>{props.repo}</h1>
-            <img src={props.profile} />
-            <p className="author">by {props.author}</p>
-            <p className="stars">{props.stars} stars</p>
+      <li className="git-result__tile">
+         <a className="git-result__link"
+            href={props.link}
+            target="_blank">
+            <div className="git-result__profile"
+               style={{ backgroundImage: `url(${props.profile})` }}></div>
+            <div className="git-result__details">
+               <h3 className="git-result__title">{props.repo}  <span className="author">by {props.author}</span></h3>
+               <p className="stars">{props.stars} stars</p>
+            </div>
          </a>
       </li>
    )

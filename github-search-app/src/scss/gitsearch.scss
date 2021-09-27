@@ -2,4 +2,14 @@
    &__container {
       margin-top: 25%;
    }
+
+   &__input,
+   &__type {
+      height: 30px;
+   }
+
+   &__input {
+      padding: 5px;
+      width: 300px;
+   }
 }
