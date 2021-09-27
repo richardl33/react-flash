@@ -14,15 +14,27 @@ import './App.css';
 
 export default class App extends Component {
   state = {
+    enableSearch: false,
+    searchInputlength: 0,
     searchQuery: '',
     searchType: 'users',
     returnData: []
   }
 
+  componentDidUpdate = () => {
+
+  }
+
+  getInputlength = () => {
+    return this.state.searchInputlength
+  }
+  
   handleInput = (e: any) => {
     this.setState({
-      searchQuery: e.target.value
+      searchQuery: e.target.value,
+      searchInputlength: e.target.value.length
     })
+
     // this.gitData();
   }
 
@@ -66,7 +78,8 @@ export default class App extends Component {
         </form>
 
         <GitResults
-          returnData={this.state.returnData}/>
+          returnData={this.state.returnData}
+          searchType={this.state.searchType}/>
       </>
     )
   }
