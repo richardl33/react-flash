@@ -2,14 +2,15 @@
    &__container {
       @media screen and (min-width: $bp-mobile) {
          display: grid;
-         grid-template-columns:repeat(2, auto);
+         grid-template-columns:repeat(2, minmax(0, 1fr));
          column-gap: 10px;
          row-gap: 10px;
       }
       @media screen and (min-width: $bp-tablet) {
-         grid-template-columns:repeat(3, auto);
+         grid-template-columns:repeat(3, minmax(0, 1fr));
          column-gap: 20px;
          row-gap: 20px;
+         padding: 10px
       }
    }
    &__tile {
@@ -37,15 +38,15 @@
          width: 50px;
          height: 50px;
       }
-      @media screen and (min-width: $bp-tablet) {
-         width: 100px;
-         height: 100px;
+      @media screen and (min-width: $bp-desktop-max) {
+         width: 120px;
+         height: 120px;
       }
    }
    &__details {
       width: 100%;
       padding: 5px;
-      @media screen and (min-width: $bp-tablet) {
+      @media screen and (min-width: $bp-desktop-max) {
          padding: 15px;
       }
    }
@@ -53,8 +54,8 @@
       text-transform: uppercase;
       font-family: 'Oxygen', sans-serif;
       font-weight: 400;
-      font-size: 15px;
-      @media screen and (min-width: $bp-tablet) {
+      font-size: 12px;
+      @media screen and (min-width: $bp-desktop-max) {
          font-size: 18px;
       }
    }

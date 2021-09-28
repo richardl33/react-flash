@@ -42,7 +42,7 @@ export default class App extends Component {
 
   gitData = async () => {
     const entityType = this.state.searchType === 'users' ? 'login' : 'name';
-    const response = await fetch(`https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=10`);
+    const response = await fetch(`https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=9`);
     const data = await response.json();
 
     this.setState({

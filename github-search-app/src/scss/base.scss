@@ -17,19 +17,18 @@ $color-green-mint: #54b6ad;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   transition: 300ms ease-in-out all;
   // border: 1px solid rgb(43, 113, 179); // Remove for prod
 }
  
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: $color-gray-lt;
 }
 
 a {
-  color: #333;
+  color: $color-gray-dk;
   text-decoration: none;
 }
 

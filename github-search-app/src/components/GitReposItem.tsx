@@ -7,7 +7,8 @@ const GitReposItem = (props: any) => {
             <div className="git-result__profile"
                style={{ backgroundImage: `url(${props.profile})` }}></div>
             <div className="git-result__details">
-               <h3 className="git-result__title">{props.repo}  <span className="author">by {props.author}</span></h3>
+               <h3 className="git-result__title">{props.repo}</h3>
+               <p className="author">by {props.author}</p>
                <p className="stars">{props.stars} stars</p>
             </div>
          </a>
