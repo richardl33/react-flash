@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import GitResults from './components/GitResults';
 import SearchSelect from './components/SearchSelect';
 import './App.scss';
+
 /**
  *
  * Create search input field component
@@ -21,10 +22,6 @@ export default class App extends Component {
     selectValues: ['users', 'repositories'],
     returnData: []
   }
-
-  componentDidUpdate = () => {
-
-  }
   
   handleInput = (e: any) => {
     this.setState({
@@ -32,7 +29,7 @@ export default class App extends Component {
       searchInputlength: e.target.value.length
     })
 
-    // this.gitData(); 
+    // this.gitData();
   }
 
   handleSelect = (e: any) => {
@@ -43,21 +40,25 @@ export default class App extends Component {
   };
 
   gitData = async () => {
-    const entityType = this.state.searchType === 'users' ? 'login' : 'name';
-    const response = await fetch(`https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=9`);
-    const data = await response.json();
+      const entityType = this.state.searchType === 'users' ? 'login' : 'name';
+      let url = `https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=9`;
+      const response = await fetch(url);
+      const data = await response.json();
 
-    this.setState({
-      returnData: data
-    });
+      this.setState({
+        returnData: data
+      });
 
-    console.log(this.state.returnData);
+      console.log(this.state.returnData);
   }
 
   render() {
     return (
       <div className="container">
-
+        <div className="container-header">
+          <h2>GitHub Searcher</h2>
+          <p>Search Users or Repositories below</p>
+        </div>
         <form className="git-search__container" onSubmit={e => {
           e.preventDefault();
           this.gitData(); // Remove (for testing only - GitHub API limit)
@@ -77,6 +78,7 @@ export default class App extends Component {
         <GitResults
           returnData={this.state.returnData}
           searchType={this.state.searchType}/>
+
       </div>
     )
   }
