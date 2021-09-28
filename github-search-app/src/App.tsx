@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import GitResults from './components/GitResults';
+import SearchSelect from './components/SearchSelect';
 import './App.scss';
-
 /**
  *
  * Create search input field component
@@ -18,6 +18,7 @@ export default class App extends Component {
     searchInputlength: 0,
     searchQuery: '',
     searchType: 'users',
+    selectValues: ['users', 'repositories'],
     returnData: []
   }
 
@@ -35,6 +36,7 @@ export default class App extends Component {
   }
 
   handleSelect = (e: any) => {
+    e.preventDefault();
     this.setState({
       searchType: e.target.value
     })
@@ -66,13 +68,10 @@ export default class App extends Component {
             type="text"
             placeholder="Start typing to search..."
             onChange={this.handleInput} />
-
-          <select 
-            className="git-search__type"
-            onChange={this.handleSelect}>
-            <option value="users">USERS</option>
-            <option value="repositories">REPOSITORIES</option>
-          </select>
+          
+          <SearchSelect 
+            handleSelect={this.handleSelect}
+            selectValues={this.state.selectValues}/>
         </form>
 
         <GitResults

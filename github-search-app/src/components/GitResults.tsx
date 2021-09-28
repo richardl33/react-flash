@@ -9,7 +9,7 @@ const GitResults = (props: any) => {
       if (props.searchType === 'users') {
          allResults = props.returnData.items.map((item: any, index: number) => (
             <GitUsersItem
-               key={index}
+               key={`user-item-${index}`}
                link={item.html_url}
                user={item.login}
                profile={item.avatar_url}
@@ -18,7 +18,7 @@ const GitResults = (props: any) => {
       } else if (props.searchType === 'repositories') {
          allResults = props.returnData.items.map((item: any, index: number) => (
             <GitReposItem
-               key={index}
+               key={`repo-item-${index}`}
                link={item.html_url}
                repo={item.name}
                author={item.owner.login}
