@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import GitResults from './components/GitResults';
 import SearchSelect from './components/SearchSelect';
 import './App.scss';
@@ -29,9 +30,9 @@ export default class App extends Component {
       searchQuery: e.target.value,
       searchInputlength: e.target.value.length
     })
-
-    // this.gitData();
+    this.gitData();
   }
+  
 
   handleSelect = (e: any) => {
     e.preventDefault();
@@ -40,18 +41,22 @@ export default class App extends Component {
     })
   };
 
-  gitData = async () => {
-      const entityType = this.state.searchType === 'users' ? 'login' : 'name';
-      let url = `https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=9`;
+  gitData = _.debounce(async () => {
+    const entityType = this.state.searchType === 'users' ? 'login' : 'name';
+    let url = `https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=9`;
+
+    if (this.state.searchInputlength >= 3) {
       const response = await fetch(url);
       const data = await response.json();
-
       this.setState({
         returnData: data
       });
-
-      console.log(this.state.returnData);
-  }
+    } else {
+      this.setState({
+        returnData: []
+      });
+    }
+  }, 300)
 
   render() {
     return (
