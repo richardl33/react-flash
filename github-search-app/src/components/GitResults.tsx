@@ -3,9 +3,9 @@ import GitReposItem from './GitReposItem';
 
 const GitResults = (props: any) => {
    let allResults;
-   const gitData = props.returnData.items;
+   const gitDataItems = props.returnData.items;
 
-   if (gitData !== undefined || null) {
+   if (gitDataItems !== undefined || null) {
       if (props.searchType === 'users') {
          allResults = props.returnData.items.map((item: any, index: number) => (
             <GitUsersItem
