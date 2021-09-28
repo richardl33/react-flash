@@ -17,8 +17,7 @@ $color-green-mint: #54b6ad;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: 300ms ease-in-out all;
-  // border: 1px solid rgb(43, 113, 179); // Remove for prod
+  transition: 100ms ease-in-out all;
 }
  
 body {
@@ -44,5 +43,5 @@ ul, li {
   justify-content: center;
   flex-direction: column;
   padding: 5px;
-  margin-top: 200px;
+  margin-top: 150px;
 }

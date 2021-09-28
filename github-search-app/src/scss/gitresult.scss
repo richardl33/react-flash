@@ -15,9 +15,10 @@
    }
    &__tile {
       background-color: white;
-      border: 1px solid $color-gray-dk;
+      border: 2px solid $color-gray-dk;
       border-radius: 5px;
       &:hover {
+         border: 2px solid $color-green-flash;
          .git-result__title {
             color: $color-green-flash;
          }
@@ -35,8 +36,12 @@
       background-position: center;
       flex-shrink: 0;
       @media screen and (min-width: $bp-mobile) {
-         width: 50px;
-         height: 50px;
+         width: 60px;
+         height: 60px;
+      }
+      @media screen and (min-width: $bp-desktop) {
+         width: 100px;
+         height: 100px;
       }
       @media screen and (min-width: $bp-desktop-max) {
          width: 120px;
@@ -45,7 +50,10 @@
    }
    &__details {
       width: 100%;
-      padding: 5px;
+      padding: 5px 15px;
+      @media screen and (min-width: $bp-desktop) {
+         padding: 10px;
+      }
       @media screen and (min-width: $bp-desktop-max) {
          padding: 15px;
       }
@@ -53,16 +61,29 @@
    &__title {
       text-transform: uppercase;
       font-family: 'Oxygen', sans-serif;
-      font-weight: 400;
+      font-weight: 700;
       font-size: 12px;
+      @media screen and (min-width: $bp-desktop) {
+         font-size: 16px;
+      }
       @media screen and (min-width: $bp-desktop-max) {
          font-size: 18px;
       }
    }
-   &__author {
-      
+   &__author,
+   &__stars {
+      font-size: 10px;
+      @media screen and (min-width: $bp-desktop) {
+         font-size: 12px;
+      }
+      @media screen and (min-width: $bp-desktop-max) {
+         font-size: 14px;
+      }
    }
    &__stars {
-
+      margin-top: 5px;
+      @media screen and (min-width: $bp-desktop) {
+         margin-top: 10px;
+      }
    }
 }
