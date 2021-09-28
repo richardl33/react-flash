@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GitResults from './components/GitResults';
 import SearchSelect from './components/SearchSelect';
 import './App.scss';
+import GitHubLogo from './github-logo.png';
 
 /**
  *
@@ -55,15 +56,17 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="container-header">
-          <h2>GitHub Searcher</h2>
-          <p>Search Users or Repositories below</p>
-        </div>
         <form className="git-search__container" onSubmit={e => {
           e.preventDefault();
           this.gitData(); // Remove (for testing only - GitHub API limit)
           }}>
-            
+          <div className="git-search__header">
+            <img className="git-search__logo" src={GitHubLogo} alt="GitHub logo" />
+            <div className="git-search__header-container">
+              <h2>GitHub Searcher</h2>
+              <p>Search Users or Repositories below</p>
+            </div>
+          </div>
           <input
             className="git-search__input"
             type="text"

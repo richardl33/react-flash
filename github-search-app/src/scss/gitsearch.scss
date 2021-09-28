@@ -2,19 +2,24 @@
    &__container {
       margin-bottom: 15px;
    }
-
+   &__logo {
+      width: 50px;
+      margin-right: 10px;
+   }
+   &__header {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+   }
    &__input,
    &__type {
-      // height: 30px;
       font-size: 16px;
       padding: 5px 5px 5px 10px;
    }
-
    &__input {
       width: 300px;
       margin-right: 5px;
    }
-
    &__type {
       text-transform: uppercase;
    }
