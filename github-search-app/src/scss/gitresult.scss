@@ -1,24 +1,62 @@
 .git-result {
+   &__container {
+      @media screen and (min-width: $bp-mobile) {
+         display: grid;
+         grid-template-columns:repeat(2, auto);
+         column-gap: 10px;
+         row-gap: 10px;
+      }
+      @media screen and (min-width: $bp-tablet) {
+         grid-template-columns:repeat(3, auto);
+         column-gap: 20px;
+         row-gap: 20px;
+      }
+   }
    &__tile {
-      background-color: pink;
-      
+      background-color: white;
+      border: 1px solid $color-gray-dk;
+      border-radius: 5px;
+      &:hover {
+         .git-result__title {
+            color: $color-green-flash;
+         }
+      }
    }
    &__link {
       display: flex;
    }
    &__profile {
-      width: 250px;
-      height: 250px;
+      width: 100px;
+      height: 100px;
+      border-right: 1px solid $color-gray-lt;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-color: white;
+      flex-shrink: 0;
+      @media screen and (min-width: $bp-mobile) {
+         width: 50px;
+         height: 50px;
+      }
+      @media screen and (min-width: $bp-tablet) {
+         width: 100px;
+         height: 100px;
+      }
    }
    &__details {
       width: 100%;
+      padding: 5px;
+      @media screen and (min-width: $bp-tablet) {
+         padding: 15px;
+      }
    }
    &__title {
-
+      text-transform: uppercase;
+      font-family: 'Oxygen', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      @media screen and (min-width: $bp-tablet) {
+         font-size: 18px;
+      }
    }
    &__author {
       

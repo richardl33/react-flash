@@ -1,18 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Oxygen:wght@300;400;700&display=swap');
+
+// Breakpoints
 $bp-mobile: 320px;
 $bp-tablet: 768px;
 $bp-desktop: 1024px;
 $bp-desktop-max: 1200px;
 
+// Colors 
+$color-gray: #f8f8f8;
+$color-gray-lt: #dedede;
+$color-gray-dk: #808080;
+$color-green-flash: #38bd7a;
+$color-green-mint: #54b6ad;
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background-color: rgb(192, 255, 239);
-  border: 1px solid rgb(43, 113, 179); // Remove for prod
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  transition: 300ms ease-in-out all;
+  // border: 1px solid rgb(43, 113, 179); // Remove for prod
 }
  
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: $color-gray-lt;
 }
 
 a {
@@ -32,4 +45,6 @@ ul, li {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 5px;
+  margin-top: 200px;
 }

@@ -29,7 +29,7 @@ const GitResults = (props: any) => {
       }
    }
 
-   return <ul>{allResults}</ul>
+   return <ul className="git-result__container">{allResults}</ul>
 }
 
 export default GitResults;

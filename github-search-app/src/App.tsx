@@ -42,7 +42,7 @@ export default class App extends Component {
 
   gitData = async () => {
     const entityType = this.state.searchType === 'users' ? 'login' : 'name';
-    const response = await fetch(`https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=2`);
+    const response = await fetch(`https://api.github.com/search/${this.state.searchType}?q=${this.state.searchQuery}%20in:${entityType}&per_page=10`);
     const data = await response.json();
 
     this.setState({
@@ -64,14 +64,14 @@ export default class App extends Component {
           <input
             className="git-search__input"
             type="text"
-            placeholder="Start typing to search .."
+            placeholder="Start typing to search..."
             onChange={this.handleInput} />
 
           <select 
             className="git-search__type"
             onChange={this.handleSelect}>
-            <option value="users">Users</option>
-            <option value="repositories">Repositories</option>
+            <option value="users">USERS</option>
+            <option value="repositories">REPOSITORIES</option>
           </select>
         </form>
 

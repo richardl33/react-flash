@@ -1,15 +1,17 @@
 .git-search {
    &__container {
-      margin-top: 25%;
+      margin-bottom: 15px;
    }
 
    &__input,
    &__type {
-      height: 30px;
+      // height: 30px;
+      font-size: 16px;
+      padding: 5px 5px 5px 10px;
    }
 
    &__input {
-      padding: 5px;
       width: 300px;
+      margin-right: 5px;
    }
 }
